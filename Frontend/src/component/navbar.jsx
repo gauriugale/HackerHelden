@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className={`navbar navbar-expand-lg`}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">HackerHeldenEducation</a>
+        <a className="navbar-brand" href="#">
+          EduCourses
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -18,25 +19,33 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <form class="d-flex " role="search">
-        <input class="form-control " type="search" placeholder="Search the courses " aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit" >Search </button>
-        </form>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <a className="nav-link active" aria-current="page" href="#">
+                Home
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
+              <a className="nav-link" href="#">
+                Courses
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/signup">Sign Up</Link>
+              <a className="nav-link" href="#">
+                About Us
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact Us</Link>
+              <a className="nav-link" href="#">
+                Contact
+              </a>
             </li>
           </ul>
+          <div className="d-flex align-items-center">
+            <button className="btn btn-outline-primary me-2">Login</button>
+            <button className="btn btn-primary me-3">Register</button>
+          </div>
         </div>
       </div>
     </nav>
