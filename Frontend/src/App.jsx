@@ -5,9 +5,10 @@ import LoginForm from './component/login.jsx';
 import SignUpForm from './component/signup.jsx';
 import ContactUsForm from './component/contactus.jsx';
 import Footer from './component/footer.jsx';
-import CardsRow from './component/CardsRow.jsx';
+import CardsRow from './component/Card.jsx';
 import Welcome from './component/welcome.jsx';
 import HomePage from './component/HomePage.jsx';
+import Cards from './component/Card.jsx';
 
 
 const App = () => {
@@ -20,10 +21,10 @@ const App = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/contact" element={<ContactUsForm />} />
+        <Route path="/card" element={<Cards />} />
       </Routes>
       
     </Router>
-    <Welcome/>
     <Footer />
     </>
     

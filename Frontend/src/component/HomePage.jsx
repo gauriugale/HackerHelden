@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Welcome from "./welcome";
 
 const HomePage = () => {
-    return (
-        <div className="bg-light text-dark">
+    const navigate = useNavigate();
+    const [darkMode, setDarkMode] = useState(false);
 
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
+    const darkModeButtonStyle = {
+        position: "fixed",
+        top: "50%",
+        right: "20px",
+        transform: "translateY(-50%)",
+        zIndex: 1000,
+    };
+
+    const handleEnrolClick = () => {
+        navigate('/card');
+    };
+
+    return (
+        <div className={darkMode ? "bg-dark text-light" : "bg-light text-dark"}>
+            <Welcome />
+            <button
+                className="btn btn-secondary"
+                style={darkModeButtonStyle}
+                onClick={toggleDarkMode}
+            >
+                {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            </button>
             <header className="text-center py-5">
                 <h1>Welcome to EduLearn</h1>
                 <p>Explore a variety of courses to enhance your skills!</p>
@@ -26,7 +54,7 @@ const HomePage = () => {
                                     Learn HTML, CSS, JavaScript, and React to build modern web
                                     applications.
                                 </p>
-                                <a href="#" className="btn btn-primary">
+                                <a href="#" className="btn btn-primary" onClick={handleEnrolClick}>
                                     Enroll Now
                                 </a>
                             </div>
@@ -44,7 +72,7 @@ const HomePage = () => {
                                 <p className="card-text">
                                     Dive into data analysis, machine learning, and AI with Python.
                                 </p>
-                                <a href="#" className="btn btn-primary">
+                                <a href="#" className="btn btn-primary" onClick={handleEnrolClick}>
                                     Enroll Now
                                 </a>
                             </div>
@@ -63,7 +91,7 @@ const HomePage = () => {
                                     Master tools like Photoshop and Illustrator to create stunning
                                     designs.
                                 </p>
-                                <a href="#" className="btn btn-primary">
+                                <a href="#" className="btn btn-primary" onClick={handleEnrolClick}>
                                     Enroll Now
                                 </a>
                             </div>

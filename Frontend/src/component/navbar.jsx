@@ -1,7 +1,17 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+  const handleRegisterClick = () => {
+    navigate('/signup');
+  }
+  const handleHomeClick = () => {
+    navigate('/');
+  };
   return (
     <nav className={`navbar navbar-expand-lg`}>
       <div className="container-fluid">
@@ -22,7 +32,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link active" aria-current="page" href="#" onClick={handleHomeClick}>
                 Home
               </a>
             </li>
@@ -43,8 +53,8 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="d-flex align-items-center">
-            <button className="btn btn-outline-primary me-2">Login</button>
-            <button className="btn btn-primary me-3">Register</button>
+            <button className="btn btn-outline-primary me-2" onClick={handleLoginClick}>Login</button>
+            <button className="btn btn-primary me-3" onClick={handleRegisterClick}>Register</button>
           </div>
         </div>
       </div>
